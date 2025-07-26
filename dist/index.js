@@ -54,7 +54,7 @@ const run = async () => {
         : true)
         .forEach((item) => {
         const gitmcpUrl = `https://gitmcp.io/${item.full_name}`;
-        md += `* [${item.name}](${item.html_url}) ([gitmcp.io](${gitmcpUrl}))${item.description ? " - " + item.description : ""}\n\n`;
+        md += `* [${item.name}](${item.html_url}) ([gitmcp.io/${item.full_name}](${gitmcpUrl}))${item.description ? " - " + item.description : ""}\n\n`;
     });
     if ((0, core_1.getInput)("suffix"))
         md += (0, core_1.getInput)("suffix");
