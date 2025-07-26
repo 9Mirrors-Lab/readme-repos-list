@@ -59,7 +59,8 @@ export const run = async () => {
         : true
     )
     .forEach((item) => {
-      md += `* [${item.name}](${item.html_url})${item.description ? " - " + item.description : ""}\n\n`;
+      const gitmcpUrl = `https://gitmcp.io/${item.full_name}`;
+      md += `* [${item.name}](${item.html_url}) ([gitmcp.io](${gitmcpUrl}))${item.description ? " - " + item.description : ""}\n\n`;
     });
   if (getInput("suffix")) md += getInput("suffix");
 
