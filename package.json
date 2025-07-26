@@ -29,31 +29,17 @@
   "devDependencies": {
     "@semantic-release/git": "^9.0.0",
     "@types/jest": "^26.0.14",
-    "@zeit/ncc": "^0.22.3",
-    "jest": "^26.5.2",
+    "@types/node": "^20.19.9",
+    "@vercel/ncc": "^0.38.3",
+    "jest": "^30.0.5",
     "semantic-release": "^17.1.2",
     "semantic-release-gitmoji": "^1.3.4",
-    "ts-jest": "^26.4.1",
-    "typescript": "^4.0.3"
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.1",
     "@koj/config": "^1.2.5"
-  },
-  "jest": {
-    "roots": [
-      "<rootDir>/src/"
-    ],
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx"
-    ],
-    "automock": false
   }
 }
