@@ -46,6 +46,9 @@ const run = async () => {
     }
     let md = (0, core_1.getInput)("prefix") ||
         "\n<!-- This list is auto-generated using readme-repos-list -->\n<!-- Do not edit this list manually, your changes will be overwritten -->\n";
+    // Start table
+    md += "| Repo Name | Description | GitMCP Link |\n";
+    md += "|----------|-------------|-------------|\n";
     repos.data.items
         .filter((repoItem) => repoItem.full_name !== `${owner}/${repo}`)
         .sort((a, b) => (a.name).localeCompare(b.name))
@@ -54,7 +57,8 @@ const run = async () => {
         : true)
         .forEach((item) => {
         const gitmcpUrl = `https://gitmcp.io/${item.full_name}`;
-        md += `* [${item.name}](${item.html_url}) ([gitmcp.io/${item.full_name}](${gitmcpUrl}))${item.description ? " - " + item.description : ""}\n\n`;
+        const description = item.description ? item.description : "";
+        md += `| ${item.name} | ${description} | [gitmcp.io/${item.full_name}](${gitmcpUrl}) |\n`;
     });
     if ((0, core_1.getInput)("suffix"))
         md += (0, core_1.getInput)("suffix");
